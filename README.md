@@ -1,6 +1,6 @@
 # Laravel Stripe Plaid
 
-[![Build Status](https://travis-ci.org/alexvargash/laravel-stripe-plaid.svg?branch=master)](https://travis-ci.org/alexvargash/laravel-stripe-plaid)
+[![Build Status](https://travis-ci.org/CodeKoalas/laravel-stripe-plaid.svg?branch=master)](https://travis-ci.org/CodeKoalas/laravel-stripe-plaid)
 [![StyleCI](https://github.styleci.io/repos/185878123/shield?branch=master)](https://github.styleci.io/repos/185878123)
 
 Simple package for creating a Stripe Bank Account Token from Plaid Link.
@@ -12,7 +12,7 @@ This package requires Laravel 5.5 or higher.
 Require the package using composer:
 
 ```bash
-composer require alexvargash/laravel-stripe-plaid
+composer require CodeKoalas/laravel-stripe-plaid
 ```
 
 The service provider will automatically get registered.
@@ -20,7 +20,7 @@ The service provider will automatically get registered.
 You can publish the configuration file with:
 
 ```bash
-php artisan vendor:publish --provider="AlexVargash\LaravelStripePlaid\StripePlaidServiceProvider" --tag="config"
+php artisan vendor:publish --provider="CodeKoalas\LaravelStripePlaid\StripePlaidServiceProvider" --tag="config"
 ```
 
 When published, the `config/stripe-plaid.php` config file contains:
@@ -138,7 +138,7 @@ Then, you need to create the `link_token` which is required as a parameter when 
 To create the public token use `createLinkToken`, this function needs the `$clientUserId` (you can find more information [here](https://plaid.com/docs/api/tokens/#token-endpoints)), optionally this fuction accepts `$clientName, $products, $language, $countryCodes` if you don't provide these values the values on `config/stripe-plaid.php` config file will be used.
 
 ```php
-use AlexVargash\LaravelStripePlaid\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\StripePlaid;
 
 $clientUserId = 'client_user_id';
 
@@ -148,7 +148,7 @@ $linkToken   = $stripePlaid->createLinkToken($clientUserId);
 Now you can use the value of `$linkToken` on [Link Web](https://plaid.com/docs/link/link-token-migration-guide/) to get the `public_token` and `account_id` values.
 
 ```php
-use AlexVargash\LaravelStripePlaid\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\StripePlaid;
 
 $accountId   = 'plaid_link_account_id';
 $publicToken = 'plaid_link_public_token';
@@ -162,7 +162,7 @@ After that you can process the payment with the `$stripeToken` as you do with a 
 The link creation and the exchange can be done with a Facade too.
 
 ```php
-use AlexVargash\LaravelStripePlaid\Facades\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\Facades\StripePlaid;
 
 $clientUserId = 'your_end_user_id';
 
@@ -170,7 +170,7 @@ $linkToken    = StripePlaid::createLinkToken($clientUserId);
 ```
 
 ```php
-use AlexVargash\LaravelStripePlaid\Facades\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\Facades\StripePlaid;
 
 $accountId   = 'plaid_link_account_id';
 $publicToken = 'plaid_link_public_token';
@@ -181,7 +181,7 @@ $stripeToken = StripePlaid::getStripeToken($publicToken, $accountId);
 Alternatively the Plaid keys can be set prior token exchange, this is handy when multiple Plaid accounts are going to be used.
 
 ```php
-use AlexVargash\LaravelStripePlaid\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\StripePlaid;
 
 $secret      = 'your_plaid_secret_key';
 $clientId    = 'your_plaid_client_id';
@@ -199,7 +199,7 @@ When an error occurs a `PlaidException` will be thrown. You can catch the `Plaid
 ```php
 public function render($request, Exception $exception)
 {
-    if ($exception instanceof \AlexVargash\LaravelStripePlaid\Exceptions\PlaidException) {
+    if ($exception instanceof \CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException) {
         // Manage exception here ...
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexVargash\LaravelStripePlaid;
+namespace CodeKoalas\LaravelStripePlaid;
 
 use Illuminate\Support\ServiceProvider;
 

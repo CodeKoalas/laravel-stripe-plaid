@@ -1,26 +1,30 @@
 {
-    "name": "alexvargash/laravel-stripe-plaid",
+    "name": "codekoalas/laravel-stripe-plaid",
     "description": "Simple package for creating a Stripe Bank Account Token from a Plaid token.",
     "keywords": ["laravel", "laravel stripe", "stripe plaid", "stripe", "plaid"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
+            "name": "Josh Fabean",
+            "email": "hello@joshfabean.com"
+        },
+        {
             "name": "Alex Vargas",
             "email": "alexvargas.dev@gmail.com"
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^7.0.1"
     },
     "autoload": {
         "psr-4": {
-            "AlexVargash\\LaravelStripePlaid\\": "src/"
+            "CodeKoalas\\LaravelStripePlaid\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AlexVargash\\LaravelStripePlaid\\Tests\\": "tests/"
+            "CodeKoalas\\LaravelStripePlaid\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -30,10 +34,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AlexVargash\\LaravelStripePlaid\\StripePlaidServiceProvider"
+                "CodeKoalas\\LaravelStripePlaid\\StripePlaidServiceProvider"
             ],
             "aliases": {
-                "StripePlaid": "AlexVargash\\LaravelStripePlaid\\Facades\\StripePlaid"
+                "StripePlaid": "CodeKoalas\\LaravelStripePlaid\\Facades\\StripePlaid"
             }
         }
     }

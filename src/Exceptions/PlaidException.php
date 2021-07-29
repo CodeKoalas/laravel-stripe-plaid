@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexVargash\LaravelStripePlaid\Exceptions;
+namespace CodeKoalas\LaravelStripePlaid\Exceptions;
 
 use Exception;
 
@@ -10,7 +10,7 @@ class PlaidException extends Exception
      * Create an exception with the provided message from Plaid.
      *
      * @param  string  $message
-     * @return AlexVargash\LaravelStripePlaid\Exceptions\PlaidException
+     * @return CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException
      */
     public static function badRequest($message)
     {
@@ -20,7 +20,7 @@ class PlaidException extends Exception
     /**
      * Create an exception for missing Plaid keys.
      *
-     * @return AlexVargash\LaravelStripePlaid\Exceptions\PlaidException
+     * @return CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException
      */
     public static function missingKeys()
     {
@@ -30,7 +30,7 @@ class PlaidException extends Exception
     /**
      * Create an exception for invalid environment.
      *
-     * @return AlexVargash\LaravelStripePlaid\Exceptions\PlaidException
+     * @return CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException
      */
     public static function invalidEnvironment()
     {

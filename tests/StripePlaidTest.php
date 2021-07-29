@@ -1,9 +1,9 @@
 <?php
 
-namespace AlexVargash\LaravelStripePlaid\Tests;
+namespace CodeKoalas\LaravelStripePlaid\Tests;
 
-use AlexVargash\LaravelStripePlaid\Exceptions\PlaidException;
-use AlexVargash\LaravelStripePlaid\StripePlaid;
+use CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException;
+use CodeKoalas\LaravelStripePlaid\StripePlaid;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

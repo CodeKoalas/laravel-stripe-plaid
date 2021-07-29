@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexVargash\LaravelStripePlaid\Facades;
+namespace CodeKoalas\LaravelStripePlaid\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

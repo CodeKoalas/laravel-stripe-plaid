@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexVargash\LaravelStripePlaid;
+namespace CodeKoalas\LaravelStripePlaid;
 
-use AlexVargash\LaravelStripePlaid\Exceptions\PlaidException;
+use CodeKoalas\LaravelStripePlaid\Exceptions\PlaidException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
@@ -43,7 +43,7 @@ class StripePlaid
      * @param  string  $secret
      * @param  string  $clientId
      * @param  string  $environment
-     * @return  AlexVargash\LaravelStripePlaid\StripePlaid
+     * @return  CodeKoalas\LaravelStripePlaid\StripePlaid
      */
     public static function make($secret, $clientId, $environment, Client $client = null)
     {
